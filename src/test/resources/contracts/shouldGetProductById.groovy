@@ -9,6 +9,9 @@ Contract.make {
     }
     response {
         status 200
+        headers {
+            header 'Content-Type': 'application/json;charset=UTF-8'
+        }
         body (
                 productId: value(server(regex("[0-9]+"))),
                 name: value(server(regex("(Product )[0-9]+"))),
